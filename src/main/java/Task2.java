@@ -1,3 +1,4 @@
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -10,6 +11,11 @@ public class Task2 {
         service.submit(fizzBuzz::buzz);
         service.submit(fizzBuzz::fizzbuzz);
         service.submit(fizzBuzz::number);
-        service.submit(fizzBuzz::printFizzBuzz);
+        BlockingQueue<String> queue = fizzBuzz.getQueue();
+        while(true){
+            while (!queue.isEmpty()) {
+                System.out.print(queue.poll() + " ");
+            }
+        }
     }
 }

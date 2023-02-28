@@ -6,6 +6,11 @@ public class FizzBuzz {
     private final int n;
     public static volatile AtomicInteger currentValue = new AtomicInteger(1);
     public BlockingQueue<String> queue = new LinkedBlockingQueue<>();
+
+    public BlockingQueue<String> getQueue() {
+        return queue;
+    }
+
     public synchronized void add(String element){
         queue.add(element);
     }
@@ -86,14 +91,13 @@ public class FizzBuzz {
                     throw new RuntimeException(e);
                 }
             }
-
         }
     }
-    public void printFizzBuzz() {
-        while (true) {
-            while (!queue.isEmpty()) {
-                System.out.print(queue.poll() + " ");
-            }
-        }
-    }
+//    public void printFizzBuzz() {
+//        while (true) {
+//            while (!queue.isEmpty()) {
+//                System.out.print(queue.poll() + " ");
+//            }
+//        }
+//    }
 }
