@@ -93,11 +93,4 @@ public class FizzBuzz {
             }
         }
     }
-//    public void printFizzBuzz() {
-//        while (true) {
-//            while (!queue.isEmpty()) {
-//                System.out.print(queue.poll() + " ");
-//            }
-//        }
-//    }
 }
